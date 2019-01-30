@@ -38,14 +38,17 @@ class House
       room_area(room)
     end
     return rooms_by_area.reverse
+
   end
 
-# In progress
+# In progress - could not get to work
+# to_h?
   # def rooms_by_category
   #   rooms_by_category = Hash.new
-  #   @rooms.each do |room|
+  #     @rooms.each do |room|
   #     rooms_by_category|room.category| = room
   #   end
+  #   return rooms_by_category
   # end
-  
+
 end
