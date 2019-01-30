@@ -2,7 +2,6 @@ require 'Minitest/autorun'
 require 'Minitest/pride'
 require './lib/room'
 require './lib/house'
-require 'pry'
 
 class HouseTest < Minitest::Test
 
@@ -115,8 +114,8 @@ class HouseTest < Minitest::Test
     house.add_room(room_3)
     house.add_room(room_4)
 
-    binding.pry
-    # assert_equal {:bedroom => [room_1, room_2], :living_room => [room_3], :basement => [room_4]}, house.rooms_by_category
+    #syntax error with expected value
+    assert_equal {:bedroom => [room_1, room_2], :living_room => [room_3], :basement => [room_4]}, house.rooms_by_category
   end
 
 end
