@@ -14,7 +14,7 @@ class HouseTest < Minitest::Test
   def test_the_house_has_a_price_string_converted_to_integer
     house = House.new("400000", "123 sugar lane")
 
-    assert_equal 400000, house.price
+    assert_equal 400_000, house.price
   end
 
   def test_that_the_house_has_an_address
@@ -113,8 +113,15 @@ class HouseTest < Minitest::Test
     house.add_room(room_3)
     house.add_room(room_4)
 
-    #syntax error with expected value
-    assert_equal {:bedroom => [room_1, room_2], :living_room => [room_3], :basement => [room_4]}, house.rooms_by_category
+    expected = {
+      bedroom: [room_1, room_2],
+      living_room: [room_3],
+      basement: [room_4]
+    }
+
+    assert_equal expected, house.rooms_by_category
+    # Original syntax error with expected value - fix -> use ()'s when asserting a hash.
+    # Better syntax now written encapsulating hash in an 'expected' variable.
   end
 
 end

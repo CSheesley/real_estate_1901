@@ -16,6 +16,12 @@ class RoomTest < Minitest::Test
     assert_equal :bedroom, room.category
   end
 
+  def test_it_can_calculate_are
+    room = Room.new(:bedroom, 10, 13)
+
+    assert_equal 130, room.area
+  end
+
   def test_that_the_room_has_length_and_width_measurements
     room = Room.new(:bedroom, 10, 13)
 
